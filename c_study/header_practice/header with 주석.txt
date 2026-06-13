@@ -1,0 +1,88 @@
+#ifndef PE_HEADER //전처리기 지시자로 헤더 파일의 중복 포함을 방지
+#define PE_HEADER // 만약 정의되어 있지 않다면 PE_PARSER_H 정의
+
+#include <stdio.h>
+#include <stdint.h>
+
+// DOS Header 구조체 정의 (IMAGE_DOS_HEADER)
+#pragma pack(push, 1)
+typedef struct {
+    uint16_t e_magic;    // "MZ" 마법 값
+    uint16_t e_cblp;     // 파일 마지막 페이지의 바이트 수
+    uint16_t e_cp;       // 파일 페이지 수
+    uint16_t e_crlc;     // 재배치 수
+    uint16_t e_cparhdr;  // 헤더의 크기
+    uint16_t e_minalloc; // 필요한 최소 추가 단위
+    uint16_t e_maxalloc; // 허용되는 최대 추가 단위
+    uint16_t e_ss;       // 초기 SS 값
+    uint16_t e_sp;       // 초기 SP 값
+    uint16_t e_csum;     // 체크섬
+    uint16_t e_ip;       // 초기 IP 값
+    uint16_t e_cs;       // 초기 CS 값
+    uint16_t e_lfarlc;   // 재배치 테이블 오프셋
+    uint16_t e_ovno;     // 오버레이 번호
+    uint16_t e_res[4];   // 예약된 단어
+    uint16_t e_oemid;    // OEM 식별자
+    uint16_t e_oeminfo;  // OEM 정보
+    uint16_t e_res2[10]; // 예약된 단어
+    int32_t  e_lfanew;   // 새로운 PE 헤더로의 오프셋
+} IMAGE_DOS_HEADER;
+
+// Signature 구조체 정의
+typedef struct {
+    uint32_t Signature;  // "PE\0\0" 서명
+} PE_SIGNATURE;
+
+// File Header 구조체 정의 (IMAGE_FILE_HEADER)
+typedef struct {
+    uint16_t Machine;               // CPU 타입
+    uint16_t NumberOfSections;      // 섹션 수
+    uint32_t TimeDateStamp;         // 타임스탬프
+    uint32_t PointerToSymbolTable;  // 심볼 테이블 포인터
+    uint32_t NumberOfSymbols;       // 심볼 수
+    uint16_t SizeOfOptionalHeader;  // 선택적 헤더 크기
+    uint16_t Characteristics;       // 파일 속성
+} IMAGE_FILE_HEADER;
+
+// Optional Header 구조체 정의 (IMAGE_OPTIONAL_HEADER)
+typedef struct {
+    uint16_t Magic;                  // PE32 or PE32+ 구분
+    uint8_t MajorLinkerVersion;      // 링커 주요 버전
+    uint8_t MinorLinkerVersion;      // 링커 부 버전
+    uint32_t SizeOfCode;             // 코드 크기
+    uint32_t SizeOfInitializedData;  // 초기화된 데이터 크기
+    uint32_t SizeOfUninitializedData;// 초기화되지 않은 데이터 크기
+    uint32_t AddressOfEntryPoint;    // 실행 진입점
+    uint32_t BaseOfCode;             // 코드의 시작 주소
+    uint32_t ImageBase;              // 이미지 기본 주소
+    uint32_t SectionAlignment;       // 섹션 정렬 크기
+    uint32_t FileAlignment;          // 파일 정렬 크기
+    uint16_t MajorOperatingSystemVersion; // 운영체제 주요 버전
+    uint16_t MinorOperatingSystemVersion; // 운영체제 부 버전
+    uint16_t MajorImageVersion;      // 이미지 주요 버전
+    uint16_t MinorImageVersion;      // 이미지 부 버전
+    uint16_t MajorSubsystemVersion;  // 서브시스템 주요 버전
+    uint16_t MinorSubsystemVersion;  // 서브시스템 부 버전
+    uint32_t SizeOfImage;            // 전체 이미지 크기
+    uint32_t SizeOfHeaders;          // 헤더 크기
+    uint32_t CheckSum;               // 체크섬
+    uint16_t Subsystem;              // 서브시스템 (예: GUI, 콘솔)
+    uint16_t DllCharacteristics;     // DLL 속성
+    uint32_t SizeOfStackReserve;     // 스택 예약 크기
+    uint32_t SizeOfStackCommit;      // 스택 커밋 크기
+    uint32_t SizeOfHeapReserve;      // 힙 예약 크기
+    uint32_t SizeOfHeapCommit;       // 힙 커밋 크기
+    uint32_t LoaderFlags;            // 로더 플래그
+    uint32_t NumberOfRvaAndSizes;    // 데이터 디렉터리 수
+} IMAGE_OPTIONAL_HEADER;
+
+// NT Headers 구조체 정의 (IMAGE_NT_HEADERS)
+typedef struct {
+    PE_SIGNATURE Signature;         // PE Signature
+    IMAGE_FILE_HEADER FileHeader;   // File Header
+    IMAGE_OPTIONAL_HEADER OptionalHeader; // Optional Header
+} IMAGE_NT_HEADERS;
+
+#pragma pack(pop)
+
+#endif //조건 끝맺음
