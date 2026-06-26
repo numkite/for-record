@@ -6,22 +6,22 @@ const Header: React.FC = () => {
       {/* (1) 상단 레이어: 로고와 전화번호 */}
       <div className="bg-white flex justify-between items-center px-4 py-3 border-b border-gray-100">
         <div className="flex items-center gap-1">
-          <span className="bg-orange-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">전주</span>
-          <span className="font-black text-gray-900 text-xl tracking-tighter">라온프라이빗</span>
+          <span className="bg-[#5B3BB4] text-white text-[10px] px-1.5 py-0.5 rounded font-bold">북전주</span>
+          <span className="font-black text-[#3D3331] text-xl tracking-tighter">광신프로그레스</span>
         </div>
 
-        <a href="tel:1555-6615" className="flex items-center gap-1 text-orange-600 font-bold">
-          <span className="text-lg">1555-xxxx</span>
+        <a href="tel:1866-2181" className="flex items-center gap-1 text-[#5B3BB4] font-bold">
+          <span className="text-lg" style={{ fontFamily: "'Cinzel', sans-serif" }}>1866-2181</span>
         </a>
       </div>
 
       {/* (2) 하단 레이어: 메뉴바 */}
-      <nav className="bg-[#222] overflow-x-auto whitespace-nowrap scrollbar-hide">
+      <nav className="bg-[#1d2432] overflow-x-auto whitespace-nowrap scrollbar-hide">
         <ul className="flex">
-          {['사업안내', '입지환경', '단지안내', '세대안내', '관심고객등록'].map((menu) => (
+          {['분양개요', '입지환경', '단지안내', '세대안내', '관심고객등록'].map((menu) => (
             <li 
               key={menu} 
-              className="px-5 py-3 text-white text-sm font-medium border-r border-white/10 hover:bg-orange-600 cursor-pointer transition-colors"
+              className="px-5 py-3 text-white text-sm font-medium border-r border-white/10 hover:bg-[#5B3BB4] cursor-pointer transition-colors"
             >
               {menu}
             </li>

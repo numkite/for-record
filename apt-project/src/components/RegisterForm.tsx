@@ -46,8 +46,9 @@ const RegisterForm: React.FC = () => {
   return (
     <section className="py-16 px-6 bg-white">
       <form onSubmit={handleSubmit} className="max-w-md mx-auto border border-gray-200 p-8 shadow-sm">
-        <h3 className="text-center text-3xl font-light tracking-widest text-gray-700 mb-2 underline decoration-orange-500 underline-offset-8">
-          1555-6615
+        <h3 className="text-center text-3xl tracking-widest text-[#3D3331] mb-2 underline decoration-[#5B3BB4] underline-offset-8"
+          style={{ fontFamily: "'Cinzel', 'Noto Serif KR', serif" }}>
+          1866-2181
         </h3>
         <h4 className="text-center text-xl font-bold text-gray-800 mb-10">관심고객 등록</h4>
         
@@ -55,21 +56,21 @@ const RegisterForm: React.FC = () => {
           {/* 이름 입력 */}
           <div className="flex flex-col gap-2">
             <label className="text-sm font-semibold text-gray-600 flex items-center gap-1">
-              이름 <span className="text-red-500 text-[10px]">●</span>
+              이름 <span className="text-[#5B3BB4] text-[10px]">●</span>
             </label>
             <input 
               type="text" 
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="성함을 입력해주세요"
-              className="w-full border-b border-gray-300 py-2 focus:border-orange-600 outline-none transition-colors" 
+              className="w-full border-b border-gray-300 py-2 focus:border-[#5B3BB4] outline-none transition-colors text-[#3D3331]"
             />
           </div>
 
           {/* 연락처 입력 */}
           <div className="flex flex-col gap-2">
             <label className="text-sm font-semibold text-gray-600 flex items-center gap-1">
-              연락처 <span className="text-red-500 text-[10px]">●</span>
+              연락처 <span className="text-[#5B3BB4] text-[10px]">●</span>
             </label>
             <div className="flex items-center gap-2">
               <input type="text" className="w-full border border-gray-300 p-2 rounded text-center bg-gray-50" value="010" readOnly />
@@ -79,7 +80,7 @@ const RegisterForm: React.FC = () => {
                 maxLength={4}
                 value={phone2}
                 onChange={(e) => setPhone2(e.target.value.replace(/[^0-9]/g, ''))}
-                className="w-full border border-gray-300 p-2 rounded text-center focus:border-orange-600 outline-none" 
+                className="w-full border border-gray-300 p-2 rounded text-center focus:border-[#5B3BB4] outline-none text-[#3D3331]" 
               />
               <span className="text-gray-400">-</span>
               <input 
@@ -87,7 +88,7 @@ const RegisterForm: React.FC = () => {
                 maxLength={4}
                 value={phone3}
                 onChange={(e) => setPhone3(e.target.value.replace(/[^0-9]/g, ''))}
-                className="w-full border border-gray-300 p-2 rounded text-center focus:border-orange-600 outline-none" 
+                className="w-full border border-gray-300 p-2 rounded text-center focus:border-[#5B3BB4] outline-none text-[#3D3331]"
               />
             </div>
           </div>
@@ -100,7 +101,7 @@ const RegisterForm: React.FC = () => {
                 id="agree" 
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="w-4 h-4 accent-orange-600 cursor-pointer" 
+                className="w-4 h-4 accent-[#5B3BB4] cursor-pointer" 
               />
               <label htmlFor="agree" className="text-sm font-bold text-gray-700 cursor-pointer">
                 개인정보 수집 및 이용에 동의합니다.
@@ -109,7 +110,7 @@ const RegisterForm: React.FC = () => {
             
             <div className="h-32 overflow-y-auto bg-gray-50 p-3 text-[11px] text-gray-500 leading-relaxed border border-gray-200 rounded scrollbar-hide">
               <p className="font-bold mb-1 text-gray-600 text-xs">※ 개인정보 수집 및 이용에 관한 안내</p>
-              <p>“전주 라온프라이빗 퍼스티브”는 고객님들에게 분양에 필요한 정보 이용을 위해 필요한 최소한의 범위로 개인정보를 수집합니다...</p>
+              <p>“북전주 광신프로그레스”는 고객님들에게 분양에 필요한 정보 이용을 위해 필요한 최소한의 범위로 개인정보를 수집합니다...</p>
               <p className="mt-2 font-bold text-gray-600 underline">개인정보의 수집 및 이용목적</p>
               <p>이름, 전화번호 : 분양정보 및 분양상담 등 안내를 위해 제공받고 이용목적이 달성된 후에는 해당정보를 지체없이 파기합니다.</p>
               <p className="mt-2 text-red-500">개인정보 수집 동의 거부권 : 모든 고객은 동의를 거부할 수 있으며, 동의를 거부할 경우 관심고객 등록이 불가합니다.</p>
@@ -122,7 +123,7 @@ const RegisterForm: React.FC = () => {
             disabled={!isFormValid}
             className={`w-full py-4 mt-2 font-bold transition-all duration-300 ${
               isFormValid 
-              ? "bg-gray-800 text-white hover:bg-orange-600 cursor-pointer shadow-lg" 
+              ? "bg-gray-800 text-white hover:bg-[#5B3BB4] cursor-pointer shadow-lg" 
               : "bg-gray-200 text-gray-400 cursor-not-allowed"
             }`}
           >
