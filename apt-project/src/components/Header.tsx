@@ -10,7 +10,7 @@ const Header: React.FC = () => {
           <span className="font-black text-[#3D3331] text-xl tracking-tighter">광신프로그레스</span>
         </div>
 
-        <a href="tel:1866-2181" className="flex items-center gap-1 text-[#5B3BB4] font-bold">
+        <a href="tel:010-5941-4589" className="flex items-center gap-1 text-[#5B3BB4] font-bold">
           <span className="text-lg" style={{ fontFamily: "'Cinzel', sans-serif" }}>1866-2181</span>
         </a>
       </div>

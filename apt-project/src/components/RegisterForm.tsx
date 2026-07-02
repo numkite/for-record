@@ -48,7 +48,7 @@ const RegisterForm: React.FC = () => {
       <form onSubmit={handleSubmit} className="max-w-md mx-auto border border-gray-200 p-8 shadow-sm">
         <h3 className="text-center text-3xl tracking-widest text-[#3D3331] mb-2 underline decoration-[#5B3BB4] underline-offset-8"
           style={{ fontFamily: "'Cinzel', 'Noto Serif KR', serif" }}>
-          1866-2181
+          010-5941-4589
         </h3>
         <h4 className="text-center text-xl font-bold text-gray-800 mb-10">관심고객 등록</h4>
         

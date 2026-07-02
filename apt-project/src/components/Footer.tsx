@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="text-gray-500 text-sm space-y-2 leading-relaxed">
           <p>현장주소: 전라북도 전주시 덕진구 여산로 256</p>
           <p>분양홍보관: 전주시 덕진구 호성동 2가 631-103</p>
-          <p>문의전화: <span className="text-[#5B3BB4] font-bold text-lg">1866-2181</span></p>
+          <p>문의전화: <span className="text-[#5B3BB4] font-bold text-lg">010-5941-4589</span></p>
         </div>
 
         <div className="mt-8 pt-6 border-t border-gray-200">

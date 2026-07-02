@@ -17,10 +17,10 @@ const Navbar: React.FC = () => {
             className="text-2xl font-black text-[#5B3BB4] tracking-wider hidden sm:inline-block"
             style={{ fontFamily: "'Gmarket Sans', 'Noto Sans KR', sans-serif" }}
           >
-            1866-2181
+            010-5941-4589
           </span>
           <a 
-            href="tel:1866-2181" 
+            href="tel:010-5941-4589" 
             className="flex items-center justify-center w-9 h-9 bg-purple-50 text-[#5B3BB4] rounded-full hover:bg-[#5B3BB4] hover:text-white transition-all shadow-sm cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
