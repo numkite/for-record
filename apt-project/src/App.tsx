@@ -9,11 +9,13 @@ import LocationPage from './pages/LocationPage';
 import ComplexPage from './pages/ComplexPage';
 import Units from './pages/Units';
 import RegisterPage from './pages/RegisterPage';
+import Popup from './components/Popup';
 
 const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      <Popup />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-[104px]">
